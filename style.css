@@ -17,6 +17,7 @@ body,html{
     position: relative;
     /* height: 100%; */
     /* background-color: red; */
+    background-color: #dadada;
 
 }
 
@@ -256,5 +257,22 @@ body,html{
 
 }
 
+
+
+#images{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin: 4vw 4vw; */
+    /* margin-top: 40vw; */
+    margin-left: 4vw;
+    /* overflow: scroll; */
+}
+
+
+#img1{
+    width: 70%;
+    height: 60%;
+}
 
 
