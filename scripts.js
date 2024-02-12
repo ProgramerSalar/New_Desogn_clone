@@ -94,4 +94,30 @@ gsap.to(".child .a", {
   delay: 1,
 });
 
+function cardshow() {
+  var showImage;
 
+  document.querySelectorAll("#images").forEach(function (cnt) {
+    cnt.addEventListener("mousemove", function(dets){
+      // console.log(dets.target)
+      // console.log(dets.target.dataset)
+      document.querySelector("#cursor").children[dets.target.dataset.index].style.opacity = 1;
+      showImage = dets.target;
+      document.querySelector("#cursor").children[showImage.dataset.index].style.transform = `translate(${dets.clientX}px, ${dets.clientY}px)`
+      showImage.style.filter = "grayscale(1)"
+
+      document.querySelector("#work").style.backgroundColor = "#" + dets.target.dataset.color;
+    });
+    cnt.addEventListener("mouseleave", function(){
+      console.log(document.querySelector("#cursor").children[showImage.dataset.index])
+      document.querySelector("#cursor").children[showImage.dataset.index].style.opacity = 0;
+      showImage.style.filter = "grayscale(0)"
+      document.querySelector("#work").style.backgroundColor = "#fff"
+
+
+  
+    });
+  });
+}
+
+cardshow()
